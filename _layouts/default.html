@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:og="http://ogp.me/ns#">
 	<head>
-		<base href="http://tomblount.co.uk/CYOA-Demo/index.html"/>
 		<meta charset="UTF-8" />
 		<title>Choose Your Own Adventure</title>
 		<meta property="og:title" content="Choose Your Own Adventure" />
 		<meta property="og:description" content="This is a demo of a simple js Choose Your Own Adventure game" />
 		<link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon">
 		
-		<!-- **** Bootstrap Styles **** -->  
+		{% if page.style %}{{page.style}}{% endif %} 
+        
+        <!-- **** Bootstrap Styles **** -->  
 		<link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css" >
 		<style type="text/css">
 			body 
@@ -41,10 +42,9 @@
                     <!--
 					<div class="nav-collapse collapse">
 						<ul class="nav">
-							<li><a href="bio.html">Biography</a></li>
-							<li><a href="gallery.html">Gallery</a></li>
-							<li><a href="contact.html">Contact Me</a></li>
-							<li><a href="http://www.ecs.soton.ac.uk/">School of ECS</a></li>
+							<li><a href="page1.html">Page 1</a></li>
+                            <li><a href="page2.html">Page 2</a></li>
+                            <li><a href="page3.html">Page 3</a></li>
 						</ul>
 					</div>
                     -->
@@ -82,6 +82,7 @@
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script type="text/javascript" src="static/js/jquery.js"></script>
         <script type="text/javascript" src="static/bootstrap/js/bootstrap.min.js"></script>
+        {% if page.script %}{{page.script}}{% endif %}
 	</body>
 </html>
 
