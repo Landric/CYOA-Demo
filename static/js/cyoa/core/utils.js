@@ -1,15 +1,19 @@
 ////////////////////////////////////////////////////////////////////////////////
 //CYOA Demo                                                                   //
 ////////////////////////////////////////////////////////////////////////////////
-//demo_index.js                                                               //
-//Chapter index of the choose your own adventure demo                         //
+//utils.js                                                                    //
+//Additional mechanics used by the core cyoa framework                        //
 ////////////////////////////////////////////////////////////////////////////////
 //Author: Tom Blount                                                          //
 //Date: 30/07/2013                                                            //
 ////////////////////////////////////////////////////////////////////////////////
 
-var chapter_index = {
-    "_1" : chapter_1,
-    "_2" : chapter_2,
-    "_3" : chapter_3,
+function scalingAddition(a, b)
+{
+    return (a + (100-a)*(b/100));
+}
+
+function scalingSubtraction(a, b)
+{
+    return (a - a*(b/100));
 }

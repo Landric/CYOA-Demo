@@ -2,7 +2,7 @@
 //CYOA Demo                                                                   //
 ////////////////////////////////////////////////////////////////////////////////
 //game.js                                                                     //
-//Core mechanics (i.e. UI display) of the cyoa game                           //
+//UI (including transitions, etc.) for the cyoa game                          //
 ////////////////////////////////////////////////////////////////////////////////
 //Author: Tom Blount                                                          //
 //Date: 30/07/2013                                                            //
@@ -27,7 +27,7 @@ $(document).ready(function(){
         return function()
         {
             consequence();
-            container.fadeOut(700, function()
+            container.fadeOut(500, function()
             {
                 container.empty();
                 var next = current_choice.next_choice();
@@ -66,7 +66,7 @@ $(document).ready(function(){
             container.append($(choice).click(consequenceCallback(final_choices[choice])));
         }
         
-        container.fadeIn(1500);
+        container.fadeIn(500);
     }
     
     current_chapter = "_1";

@@ -1,15 +1,19 @@
 ////////////////////////////////////////////////////////////////////////////////
 //CYOA Demo                                                                   //
 ////////////////////////////////////////////////////////////////////////////////
-//demo_index.js                                                               //
-//Chapter index of the choose your own adventure demo                         //
+//demo_ch3.js                                                                 //
+//"Chapter 3" of the choose your own adventure demo                           //
 ////////////////////////////////////////////////////////////////////////////////
 //Author: Tom Blount                                                          //
 //Date: 30/07/2013                                                            //
 ////////////////////////////////////////////////////////////////////////////////
 
-var chapter_index = {
-    "_1" : chapter_1,
-    "_2" : chapter_2,
-    "_3" : chapter_3,
+var last_answer;
+
+var chapter_3 = new Object();
+
+chapter_3._1 = {
+    paragraph : function(){return "The end!"},
+    choices : function(){},
+    special_choices : function(){},
 }
