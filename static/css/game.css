@@ -1,5 +1,5 @@
 #main{
-    background:#DDDDDD;
+    background:#D0D0D0;
     padding:10px 40px; 
     border-radius:25px;
 }
@@ -7,13 +7,13 @@
 .choice{
     border:2px solid #A1A1A1;
     padding:10px 40px 0px;
-    background:#F0F0F0;
+    background:#E0E0E0;
     border-radius:25px;
     margin-bottom:5px;
 }
 
 .choice:hover{
-    background:#DDDDDD;
+    background:#F0F0F0;
 }
 
 .special-choice{
