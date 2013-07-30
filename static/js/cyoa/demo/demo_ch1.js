@@ -50,6 +50,10 @@ chapter_1._2 = {
         }
         return "Wow, I love "+colour+" too! Well, that's all for now - I hope you enjoyed this demo.";
     },
-    choices : function(){},
+    choices : function(){return {"Continue" : function(){}}},
     special_choices : function(){},
+    next_choice : function()
+    {
+        return -1;
+    }
 }

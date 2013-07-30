@@ -12,6 +12,7 @@
 $('#no-js').remove();
 
 //Declare all the required variables
+var current_chapter;
 var current_choice;
 var last_answer;
 
@@ -29,7 +30,15 @@ $(document).ready(function(){
             container.fadeOut(700, function()
             {
                 container.empty();
-                displayChoice(chapter_1[current_choice.next_choice()])
+                var next = current_choice.next_choice();
+                if(next === -1)
+                {
+                    current_chapter = "_"+(parseInt(current_chapter.substring(1,2)) + 1);
+                    displayChoice(chapter_index[current_chapter]._1);
+                }
+                else{
+                    displayChoice(chapter_index[current_chapter][next]);
+                }
             });
         }
     }
@@ -60,6 +69,7 @@ $(document).ready(function(){
         container.fadeIn(1500);
     }
     
-    current_choice = chapter_1._0;
+    current_chapter = "_1";
+    current_choice = chapter_index[current_chapter]._0;
     displayChoice(current_choice);
 });
