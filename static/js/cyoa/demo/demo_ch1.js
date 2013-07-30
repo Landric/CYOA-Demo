@@ -14,7 +14,8 @@ var chapter_1 = new Object();
 
 chapter_1._0 = {
     paragraph : function(){return "Hi there! This is a short demo showcasing some of the possibilities of this CYOA framework!"},
-    choices : function(){{"Continue" : function(){}}},
+    choices : function(){return {"Continue" : function(){}}},
+    special_choices : function(){},
     next_choice : function()
     {
         return "_1";
@@ -48,5 +49,7 @@ chapter_1._2 = {
             return "Wow - you must be a wizard! Well, that's all for now - I hope you enjoyed this demo.";
         }
         return "Wow, I love "+colour+" too! Well, that's all for now - I hope you enjoyed this demo.";
-    }
+    },
+    choices : function(){},
+    special_choices : function(){},
 }
