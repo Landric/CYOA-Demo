@@ -35,17 +35,18 @@ chapter_1._1 = {
 chapter_1._2 = {
     paragraph : function()
     {
-        var colour;
+        //Yes, this could be simplified by using "favourite_colour" instead of "last_answer", but
+        //this demonstrates how to refer to the previous answer without storing it as a stat
         if(last_answer === "a"){
-            colour = "red";
+            favourite_colour = "red";
         }
         else if(last_answer === "b"){
-            colour = "green";
+            favourite_colour = "green";
         }
         else if(last_answer === "c"){
-            colour = "blue";
+            favourite_colour = "blue";
         }
-        return "Wow, I love "+colour+" too! Now lets have a look at your stats!";
+        return "Wow, I love "+favourite_colour+" too! Now lets have a look at your stats!";
     },
     choices : function(){return {"Continue" : function(){}}},
     special_choices : function(){},
