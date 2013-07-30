@@ -21,23 +21,23 @@ $(document).ready(function(){
     var container = $('<div class="span10 lead" id="main">').hide();
     $('#content').append(container);
     
-    function getNextChoice(current_choice, last_answer)
-    {
-        
-    }
-    
     function consequenceCallback(consequence)
     {
         return function()
         {
             consequence();
-            container.fadeOut(700, container.empty);
-            displayChoice(getNextChoice(current_choice));
+            container.fadeOut(700, function()
+            {
+                container.empty();
+                displayChoice(chapter_1[current_choice.next_choice()])
+            });
         }
     }
     
     function displayChoice(choice)
     {
+        current_choice = choice;
+        
         var paragraph = choice.paragraph, choices = choice.choices, special_choices = choice.special_choices;
         
         paragraph = '<br/><p>'+paragraph+'</p><br/>';
@@ -60,5 +60,6 @@ $(document).ready(function(){
         container.fadeIn(1500);
     }
     
-    displayChoice(chapter_1._1);
+    current_choice = chapter_1._0;
+    displayChoice(current_choice);
 });
