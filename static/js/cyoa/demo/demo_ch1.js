@@ -8,11 +8,13 @@
 //Date: 30/07/2013                                                            //
 ////////////////////////////////////////////////////////////////////////////////
 
+var last_answer;
+
 var chapter_1 = new Object();
 
 chapter_1._0 = {
-    paragraph : "Hi there! This is a short demo showcasing some of the possibilities of this CYOA framework!",
-    choices : {"Continue" : function(){}},
+    paragraph : function(){return "Hi there! This is a short demo showcasing some of the possibilities of this CYOA framework!"},
+    choices : function(){{"Continue" : function(){}}},
     next_choice : function()
     {
         return "_1";
@@ -20,9 +22,9 @@ chapter_1._0 = {
 }
 
 chapter_1._1 = {
-    paragraph : "Let's get started! What's your favourite colour?",
-    choices : {"Red" : function(){alert("Red!")}, "Green" : function(){alert("Green!")}, "Blue" : function(){alert("Blue!")}},
-    special_choices : {"I choose Octarine!" : function(){alert("Wizard!")}},
+    paragraph : function(){return "Let's get started! What's your favourite colour?"},
+    choices : function(){return {"Red" : function(){last_answer = "a"}, "Green" : function(){last_answer = "b"}, "Blue" : function(){last_answer = "c"}}},
+    special_choices : function(){return{"I choose Octarine!" : function(){last_answer = "d"}};},
     next_choice : function()
     {
         return "_2";
@@ -30,5 +32,21 @@ chapter_1._1 = {
 }
 
 chapter_1._2 = {
-    paragraph : "Mine too! Well, that's all for now - I hope you enjoyed this demo.",
+    paragraph : function()
+    {
+        var colour;
+        if(last_answer === "a"){
+            colour = "red";
+        }
+        else if(last_answer === "b"){
+            colour = "green";
+        }
+        else if(last_answer === "c"){
+            colour = "blue";
+        }
+        else{
+            return "Wow - you must be a wizard! Well, that's all for now - I hope you enjoyed this demo.";
+        }
+        return "Wow, I love "+colour+" too! Well, that's all for now - I hope you enjoyed this demo.";
+    }
 }
