@@ -54,6 +54,6 @@ chapter_1._2 = {
     special_choices : function(){},
     next_choice : function()
     {
-        return -1;
+        return 2;
     }
 }

@@ -31,9 +31,9 @@ $(document).ready(function(){
             {
                 container.empty();
                 var next = current_choice.next_choice();
-                if(next === -1)
+                if(/^\d+$/.test(next))
                 {
-                    current_chapter = "_"+(parseInt(current_chapter.substring(1,2)) + 1);
+                    current_chapter = "_"+next;
                     displayChoice(chapter_index[current_chapter]._1);
                 }
                 else{
