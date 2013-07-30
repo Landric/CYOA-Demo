@@ -23,8 +23,8 @@ chapter_1._0 = {
 }
 
 chapter_1._1 = {
-    paragraph : function(){return "Let's get started! What's your favourite colour?"},
-    choices : function(){return {"Red" : function(){last_answer = "a"}, "Green" : function(){last_answer = "b"}, "Blue" : function(){last_answer = "c"}}},
+    paragraph : function(){return "Let's get started! What is your name?</p><br/><input type='text' id='name'/><p>"},
+    choices : function(){return {"Continue" : function(){player_name = $("#name").val();}};},
     special_choices : function(){},
     next_choice : function()
     {
@@ -33,6 +33,16 @@ chapter_1._1 = {
 }
 
 chapter_1._2 = {
+    paragraph : function(){return "Nice to meet you "+player_name+"! What's your favourite colour?"},
+    choices : function(){return {"Red" : function(){last_answer = "a"}, "Green" : function(){last_answer = "b"}, "Blue" : function(){last_answer = "c"}}},
+    special_choices : function(){},
+    next_choice : function()
+    {
+        return "_3";
+    }
+}
+
+chapter_1._3 = {
     paragraph : function()
     {
         //Yes, this could be simplified by using "favourite_colour" instead of "last_answer", but

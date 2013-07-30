@@ -28,7 +28,8 @@ chapter_3._1 = {
 }
 
 chapter_3._2 = {
-    paragraph : function(){return "You wander down the road for some way before stopping in a clearing full of flowers."},
+    paragraph : function(){return "You wander down the road for some way before stopping in a clearing full of flowers."+
+        "</p><p>Remember, on your next playthrough, you can try a different route!"},
     choices : function(){return {"Ignore them" : function(){last_answer = "a";}};},
     special_choices : function(){
         var s_choice = new Object();
@@ -42,7 +43,8 @@ chapter_3._2 = {
 }
 
 chapter_3._3 = {
-    paragraph : function(){return "You follow the for for a while, but nothing much happens. Perhaps on your next playthrough you should try another route?"},
+    paragraph : function(){return "You follow the for for a while, and eventually come across a large sign.</p>"+
+        "<p><bold>'HELLO "+player_name+"!'</bold></p><p>Remember, on your next playthrough, you can try a different route!"},
     choices : function(){return {"Follow the road" : function(){last_answer = "a"}};},
     special_choices : function(){},
     next_choice : function()
