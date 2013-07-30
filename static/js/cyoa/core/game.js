@@ -18,9 +18,21 @@ var last_answer;
 
 $(document).ready(function(){
     
+    //Create a bootstrap row, to hold the control sidebar and main container
+    var row = $('<div class="row">');
+    $('#content').append(row);
+    
+    //Create a sidebar, to display location, date and controls
+    var controls = $('<div class="span2" id="controls">');
+    controls.append($('<p>Location: '+loc+'</p>'));
+    controls.append($('<p>Date: '+date+'</p>'));
+    controls.append($('<p>Time: '+time+'</p>'));
+    controls.append($('<a class="btn">Stats</a>&nbsp;&nbsp;<a class="btn">Restart</a>'));
+    row.append(controls);
+    
     //Create a container for the choices to be displayed in
-    var container = $('<div class="span10 lead" id="main">').hide();
-    $('#content').append(container);
+    var container = $('<div class="span8 lead" id="main">').hide();
+    row.append(container);
     
     function consequenceCallback(consequence)
     {
@@ -53,11 +65,11 @@ $(document).ready(function(){
         var final_choices = new Object();
         
         for (choice in choices) {
-            final_choices['<div class="span8 choice"><p>'+choice+'</p></div>'] = choices[choice];
+            final_choices['<div class="span6 choice"><p>'+choice+'</p></div>'] = choices[choice];
         }
         
         for (choice in special_choices) {
-            final_choices['<div class="span8 choice special-choice"><p>'+choice+'</p></div>'] = special_choices[choice];
+            final_choices['<div class="span6 choice special-choice"><p>'+choice+'</p></div>'] = special_choices[choice];
         }
         
         container.append($(paragraph));
@@ -65,7 +77,7 @@ $(document).ready(function(){
         for (choice in final_choices) {
             container.append($(choice).click(consequenceCallback(final_choices[choice])));
         }
-        
+
         container.fadeIn(500);
     }
     

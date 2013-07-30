@@ -4,6 +4,12 @@
     border-radius:25px;
 }
 
+#controls{
+    padding:10px 40px; 
+    border-radius:25px;
+    border:2px solid #D0D0D0;
+}
+
 .choice{
     border:2px solid #A1A1A1;
     padding:10px 40px 0px;
