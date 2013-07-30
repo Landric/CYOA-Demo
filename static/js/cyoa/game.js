@@ -38,7 +38,7 @@ $(document).ready(function(){
     {
         current_choice = choice;
         
-        var paragraph = choice.paragraph, choices = choice.choices, special_choices = choice.special_choices;
+        var paragraph = choice.paragraph(), choices = choice.choices, special_choices = choice.special_choices;
         
         paragraph = '<br/><p>'+paragraph+'</p><br/>';
         var final_choices = new Object();
