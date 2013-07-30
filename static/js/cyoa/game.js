@@ -37,12 +37,8 @@ $(document).ready(function(){
     function displayChoice(choice)
     {
         current_choice = choice;
-        
-<<<<<<< HEAD
+
         var paragraph = choice.paragraph(), choices = choice.choices(), special_choices = choice.special_choices();
-=======
-        var paragraph = choice.paragraph(), choices = choice.choices, special_choices = choice.special_choices;
->>>>>>> 0d422f7d1eff26a2c270dd004d708c9fc19d3d6c
         
         paragraph = '<br/><p>'+paragraph+'</p><br/>';
         var final_choices = new Object();
