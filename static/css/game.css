@@ -10,10 +10,44 @@
     border:2px solid #999999;
 }
 
-#stats{
+#stat-panel{
     padding:10px 40px; 
     border-radius:25px;
     border:2px solid #999999;
+}
+
+.bar-div{
+    position: relative;
+}
+
+.stat-label{
+    color: #FFFFFF;
+    position: absolute;
+    top: 2px;
+    left: 20px;
+    z-index: 2;
+}
+
+.stat-bar{
+    position: relative;
+    border:2px solid #000000;
+    height:20px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    background:#000000;
+    z-index: 1;
+}
+
+.empty-bar{
+    position: absolute;
+    border:2px solid #000000;
+    height:20px;
+    border-radius: 25px;
+    background:#DDDDDD;
+}
+
+.opposed-stat{
+    background:#EEEEEE;
 }
 
 .choice{

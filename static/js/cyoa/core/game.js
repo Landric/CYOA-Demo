@@ -48,17 +48,29 @@ $(document).ready(function(){
     //Display stats
     function displayBarStat(stat, value)
     {
-        return "<p>"+stat+": "+value+"</p>";
+        var stat_row = $('<div class="row">');
+        
+        var bar_div = $('<div class="span8 bar-div">');
+        bar_div.append($('<div class="empty-bar span8">'));
+        bar_div.append($('<div class="stat-bar">').width(parseFloat(bar_div.width()) * (parseFloat(value)/100.0)));
+        console.log(bar_div.width());
+        console.log((parseFloat(bar_div.width()) * (parseFloat(value)/100.0)));
+        bar_div.append($('<p class="stat-label">'+value+'% </p>'));
+ 
+        stat_row.append($('<div class="span1"><p>'+stat+': </p></div>'));
+        stat_row.append(bar_div);
+        
+        return stat_row;
     }
     
     $('#show-stats').click(function(){
-        var stat_div = $('<div id="stats">');
+        var stat_div = $('<div class="span10" id="stat-panel">');
     
         var stats = statsToDisplay();
         
         //Add percentage stats
         for(stat in stats.percentageStats){
-            stat_div.append($(displayBarStat(stat, stats.percentageStats[stat])));
+            stat_div.append(displayBarStat(stat, stats.percentageStats[stat]));
         }
         
         //Add any other stats
