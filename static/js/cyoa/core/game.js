@@ -30,7 +30,7 @@ $(document).ready(function(){
     controls.append($('<p>Location: '+loc+'</p>'));
     controls.append($('<p>Date: '+date+'</p>'));
     controls.append($('<p>Time: '+time+'</p>'));
-    controls.append($('<a class="btn">Stats</a>&nbsp;&nbsp;<a class="btn" role="button" data-toggle="modal" href="#confirmRestart">Restart</a>'));
+    controls.append($('<a class="btn" id="show-stats">Stats</a>&nbsp;&nbsp;<a class="btn" role="button" data-toggle="modal" href="#confirmRestart">Restart</a>'));
     row.append(controls);
     
     //Set up a confirmation modal for the Restart button
@@ -44,6 +44,38 @@ $(document).ready(function(){
     '</div>'));
     
     $('#restart').click(initialiseGame);
+    
+    //Display stats
+    function displayBarStat(stat, value)
+    {
+        return "<p>"+stat+": "+value+"</p>";
+    }
+    
+    $('#show-stats').click(function(){
+        var stat_div = $('<div id="stats">');
+    
+        var stats = statsToDisplay();
+        
+        //Add percentage stats
+        for(stat in stats.percentageStats){
+            stat_div.append($(displayBarStat(stat, stats.percentageStats[stat])));
+        }
+        
+        //Add any other stats
+        
+        //Add a "Continue" button which destroys the stat_div
+        stat_div.append($('<button class="btn">Continue</button>').click(function(){
+            stat_div.fadeOut(500, function(){
+                stat_div.remove();
+                row.fadeIn(500);
+            });
+        }));
+        
+        //Finally, hide the current choice and display stats
+        stat_div.hide();
+        $('#content').append(stat_div);
+        row.fadeOut(500, function(){stat_div.fadeIn(500);});
+    });
     
     //Create a container for the choices to be displayed in
     var container = $('<div class="span8 lead" id="main">').hide();

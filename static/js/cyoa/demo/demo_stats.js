@@ -34,3 +34,9 @@ function initialiseStats()
     player_name = null;
     favourite_colour = null;
 }
+
+//Return the stats to be displayed (some stats are kept secret)
+function statsToDisplay()
+{
+    return {percentageStats : {"Strength" : str, "Dexterity": dex, "Intelligence" : intel}};
+}
