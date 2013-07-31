@@ -34,7 +34,7 @@ $(document).ready(function(){
     row.append(controls);
     
     //Set up a confirmation modal for the Restart button
-    $('#content').append($('<div id="confirmRestart" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">'+
+    $('#content').append($('<div id="confirmRestart" class="modal hide fade" tabindex="-1" role="dialog" aria-hidden="true">'+
         '<div class="modal-body">'+
             '<p>Are you sure you want to restart from the beginning? This will delete all of your progress so far!</p>'+
         '</div>'+
