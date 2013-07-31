@@ -18,14 +18,14 @@ chapter_2._1 = {
     choices : function()
     {
         return {
-            "Go to the gym and train STRENGTH" : function(){last_answer = "a"; str = scalingAddition(str, 30);},
-            "Go to the park and train DEXTERITY" : function(){last_answer = "b"; dex = scalingAddition(dex, 30);},
-            "Got to the library and train INTELLIGENCE" : function(){last_answer = "c"; intel = scalingAddition(intel, 30);},
+            "Go to the gym and train STRENGTH" : function(){last_answer = "a"; str = moderateIncrease(str);},
+            "Go to the park and train DEXTERITY" : function(){last_answer = "b"; dex = moderateIncrease(dex);},
+            "Got to the library and train INTELLIGENCE" : function(){last_answer = "c"; intel = moderateIncrease(intel);},
             "Don't bother - sit and watch TV" : function(){
                 last_answer = "d";
-                str = scalingSubtraction(str, 30);
-                dex = scalingSubtraction(dex, 30);
-                intel = scalingSubtraction(intel, 30);
+                str = moderateDecrease(str);
+                dex = moderateDecrease(dex);
+                intel = moderateDecrease(intel);
             }
         };
     },
