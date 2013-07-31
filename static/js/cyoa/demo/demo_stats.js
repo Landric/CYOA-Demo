@@ -9,13 +9,28 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 //Sidebar info
-var loc = "Deep space";
-var date = "The future";
-var time = "Teatime";
+var loc, date, time;
 
 //Numerical stats
-var str = 50, dex = 50, intel = 50;
+var str, dex, intel;
 
 //Other info
-var player_name;
-var favourite_colour;
+var player_name, favourite_colour;
+
+//Initialise/Restart
+function initialiseStats()
+{
+    //Sidebar info
+    loc = "Deep space";
+    date = "The future";
+    time = "Teatime";
+    
+    //Numerical stats
+    str = 50;
+    dex = 50;
+    intel = 50;
+    
+    //Other info
+    player_name = null;
+    favourite_colour = null;
+}
