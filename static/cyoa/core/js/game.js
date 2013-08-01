@@ -50,7 +50,7 @@ $(document).ready(function(){
     {
         var stat_row = $('<div class="row">');
         
-        var bar_div = $('<div class="span8 bar-div">');
+        var bar_div = $('<div class="span6 bar-div">');
         bar_div.append($('<div class="empty-bar span6">'));
         bar_div.append($('<div class="stat-bar '+stat['class']+'" id="'+stat['id']+'">').width(Math.round(parseFloat(bar_div.width()) * (parseFloat(stat['value'])/100.0))));
         bar_div.append($('<p class="stat-label">'+stat['value']+'% </p>'));
