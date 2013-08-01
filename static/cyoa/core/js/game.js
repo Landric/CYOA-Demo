@@ -46,18 +46,16 @@ $(document).ready(function(){
     $('#restart').click(initialiseGame);
     
     //Display stats
-    function displayBarStat(stat, value)
+    function displayBarStat(stat)
     {
         var stat_row = $('<div class="row">');
         
         var bar_div = $('<div class="span8 bar-div">');
-        bar_div.append($('<div class="empty-bar span8">'));
-        bar_div.append($('<div class="stat-bar">').width(parseFloat(bar_div.width()) * (parseFloat(value)/100.0)));
-        console.log(bar_div.width());
-        console.log((parseFloat(bar_div.width()) * (parseFloat(value)/100.0)));
-        bar_div.append($('<p class="stat-label">'+value+'% </p>'));
+        bar_div.append($('<div class="empty-bar span6">'));
+        bar_div.append($('<div class="stat-bar '+stat['class']+'" id="'+stat['id']+'">').width(Math.round(parseFloat(bar_div.width()) * (parseFloat(stat['value'])/100.0))));
+        bar_div.append($('<p class="stat-label">'+stat['value']+'% </p>'));
  
-        stat_row.append($('<div class="span1"><p>'+stat+': </p></div>'));
+        stat_row.append($('<div class="span2"><p>'+stat['name']+': </p></div>'));
         stat_row.append(bar_div);
         
         return stat_row;
@@ -69,8 +67,8 @@ $(document).ready(function(){
         var stats = statsToDisplay();
         
         //Add percentage stats
-        for(stat in stats.percentageStats){
-            stat_div.append(displayBarStat(stat, stats.percentageStats[stat]));
+        for(var i=0; i < stats.percentageStats.length; i++){
+            stat_div.append(displayBarStat(stats.percentageStats[i]));
         }
         
         //Add any other stats

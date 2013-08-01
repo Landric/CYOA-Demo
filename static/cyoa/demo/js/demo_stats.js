@@ -38,5 +38,7 @@ function initialiseStats()
 //Return the stats to be displayed (some stats are kept secret)
 function statsToDisplay()
 {
-    return {percentageStats : {"Strength" : str, "Dexterity": dex, "Intelligence" : intel}};
+    return {percentageStats : [{"name" : "Strength", "value" : str, "class" : "personal", "id" : "str"},
+                                {"name" : "Dexterity", "value" : dex, "class" : "personal", "id" :"dex"}, 
+                                {"name" : "Intelligence", "value" : intel, "class" : "colony", "id" : "intel"}]};
 }
