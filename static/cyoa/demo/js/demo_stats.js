@@ -38,7 +38,7 @@ function initialiseStats()
 //Return the stats to be displayed (some stats are kept secret)
 function statsToDisplay()
 {
-    return {percentageStats : [{"name" : "Strength", "value" : str, "class" : "personal", "id" : "str"},
-                                {"name" : "Dexterity", "value" : dex, "class" : "personal", "id" :"dex"}, 
-                                {"name" : "Intelligence", "value" : intel, "class" : "colony", "id" : "intel"}]};
+    return {percentageStats : [{"name" : "Strength", "value" : str, "class" : "personal", "id" : "str", "desc" : "Strength is a measure of physical strength and raw power"},
+                                {"name" : "Dexterity", "value" : dex, "class" : "personal", "id" :"dex", "desc" : "Dexterity is a measure of speed, grace and agility"}, 
+                                {"name" : "Intelligence", "value" : intel, "class" : "colony", "id" : "intel", "desc" : "Intelligence is a measure of smarts and rationality"}]};
 }

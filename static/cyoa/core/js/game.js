@@ -53,9 +53,14 @@ $(document).ready(function(){
         var bar_div = $('<div class="span6 bar-div">');
         bar_div.append($('<div class="empty-bar span6">'));
         bar_div.append($('<div class="stat-bar '+stat['class']+'" id="'+stat['id']+'">').width(Math.round(parseFloat(bar_div.width()) * (parseFloat(stat['value'])/100.0))));
-        bar_div.append($('<p class="stat-label">'+stat['value']+'% </p>'));
+        bar_div.append($('<p class="stat-label">'+stat['value']+'%</p>'));
  
-        stat_row.append($('<div class="span2"><p>'+stat['name']+': </p></div>'));
+        var tip_name = stat['name']+'-tooltip';
+ 
+        stat_row.append($('<div class="span2"><p>').append($('<a id="'+tip_name+'" title="" data-title="'+stat['desc']+'" data-placement="left">'+stat['name']+': </a></p></div>').tooltip()));
+        
+        //$(tip_name).tooltip();
+        
         stat_row.append(bar_div);
         
         return stat_row;
@@ -73,7 +78,7 @@ $(document).ready(function(){
         
         //Add any other stats
         
-        //Add a "Continue" button which destroys the stat_div
+        //Add a "Continue" button which destroys the stat_div and re-displays the current choice
         stat_div.append($('<button class="btn">Continue</button>').click(function(){
             stat_div.fadeOut(500, function(){
                 stat_div.remove();
@@ -140,6 +145,7 @@ $(document).ready(function(){
     
     function initialiseGame()
     {
+        //If there's a game in progress, restart
         if (container.children().length > 0){
             container.fadeOut(500, function(){
                 container.empty();
@@ -153,6 +159,7 @@ $(document).ready(function(){
             current_chapter = "_1";
             current_choice = chapter_index[current_chapter]._0;
             displayChoice(current_choice);
+            //No need to initialise stats, we did it earlier
         }
     }
     
