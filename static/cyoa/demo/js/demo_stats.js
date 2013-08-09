@@ -35,10 +35,10 @@ function initialiseStats()
     favourite_colour = null;
 }
 
-//Return the stats to be displayed (some stats are kept secret)
+//Return the stats to be displayed (some stats can be kept secret)
 function statsToDisplay()
 {
-    return {percentageStats : [{"name" : "Strength", "value" : str, "class" : "personal", "id" : "str", "desc" : "Strength is a measure of physical strength and raw power"},
-                                {"name" : "Dexterity", "value" : dex, "class" : "personal", "id" :"dex", "desc" : "Dexterity is a measure of speed, grace and agility"}, 
-                                {"name" : "Intelligence", "value" : intel, "class" : "colony", "id" : "intel", "desc" : "Intelligence is a measure of smarts and rationality"}]};
+    return {percentageStats : [{"name" : "Strength", "value" : str, "class" : "red-stat", "id" : "str", "desc" : "Strength is a measure of physical strength and raw power"},
+                                {"name" : "Dexterity", "value" : dex, "class" : "red-stat", "id" :"dex", "desc" : "Dexterity is a measure of speed, grace and agility"}, 
+                                {"name" : "Intelligence", "value" : intel, "class" : "blue-stat", "id" : "intel", "desc" : "Intelligence is a measure of smarts and rationality"}]};
 }
