@@ -74,7 +74,9 @@ $(document).ready(function(){
             stat_div.append(displayBarStat(stats.percentageStats[i]));
         }
         
-        //Add any other stats
+        //Add any other stats, then a linebreak
+        
+        stat_div.append($('<br/>'));
         
         //Add a "Continue" button which destroys the stat_div and re-displays the current choice
         stat_div.append($('<button class="btn">Continue</button>').click(function(){
