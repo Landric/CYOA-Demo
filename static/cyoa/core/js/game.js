@@ -59,8 +59,6 @@ $(document).ready(function(){
  
         stat_row.append($('<div class="span2"><p>').append($('<a id="'+tip_name+'" title="" data-title="'+stat['desc']+'" data-placement="left">'+stat['name']+': </a></p></div>').tooltip()));
         
-        //$(tip_name).tooltip();
-        
         stat_row.append(bar_div);
         
         return stat_row;
