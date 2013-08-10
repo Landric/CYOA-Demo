@@ -28,6 +28,10 @@
     border-bottom:1px dotted #999;
 }
 
+div[class="tooltip-inner"] {
+    max-width: 150px;
+}
+
 .bar-div{
     position: relative;
 }
