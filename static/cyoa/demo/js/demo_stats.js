@@ -12,7 +12,7 @@
 var loc, date, time;
 
 //Numerical stats
-var str, dex, intel;
+var str, dex, intel, faith;
 
 //Other info
 var player_name, favourite_colour;
@@ -29,6 +29,7 @@ function initialiseStats()
     str = 50;
     dex = 50;
     intel = 50;
+    faith = 50;
     
     //Other info
     player_name = null;
@@ -38,7 +39,10 @@ function initialiseStats()
 //Return the stats to be displayed (some stats can be kept secret)
 function statsToDisplay()
 {
-    return {percentageStats : [{"name" : "Strength", "value" : str, "class" : "red-stat", "id" : "str", "desc" : "Strength is a measure of physical strength and raw power"},
+    return {
+        percentageStats : [{"name" : "Strength", "value" : str, "class" : "red-stat", "id" : "str", "desc" : "Strength is a measure of physical strength and raw power"},
                                 {"name" : "Dexterity", "value" : dex, "class" : "red-stat", "id" :"dex", "desc" : "Dexterity is a measure of speed, grace and agility"}, 
-                                {"name" : "Intelligence", "value" : intel, "class" : "blue-stat", "id" : "intel", "desc" : "Intelligence is a measure of smarts and rationality"}]};
+                                {"name" : "Intelligence", "value" : intel, "class" : "blue-stat", "id" : "intel", "desc" : "Intelligence is a measure of smarts and rationality"},
+                                {"name" : "Faith", "value" : faith, "class" : "red-stat", "id" : "faith", "desc" : "Faith is a measure of the power of belief, and willingness to trust in others.", "opposed-name" : "Rationality", "opposed-class" : "red-stat-opposed", "opposed-desc" : "Rationality is a measure of critical thinking and unwillingness to accept statements without evidence"},],
+    };
 }
