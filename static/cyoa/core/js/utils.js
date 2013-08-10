@@ -18,7 +18,7 @@ function scalingSubtraction(a, b)
     return (a - a*(b/100));
 }
 
-function verySmallIncrease(stat)
+function tinyIncrease(stat)
 {
     return scalingAddition(stat, 5);
 }
@@ -38,12 +38,12 @@ function largeIncrease(stat)
     return scalingAddition(stat, 30);
 }
 
-function veryLargeIncrease(stat)
+function hugeIncrease(stat)
 {
     return scalingAddition(stat, 40);
 }
 
-function verySmallDecrease(stat)
+function tinyDecrease(stat)
 {
     return scalingSubtraction(stat, 5);
 }
@@ -63,7 +63,7 @@ function largeDecrease(stat)
     return scalingSubtraction(stat, 30);
 }
 
-function veryLargeDecrease(stat)
+function hugeDecrease(stat)
 {
     return scalingSubtraction(stat, 40);
 }
