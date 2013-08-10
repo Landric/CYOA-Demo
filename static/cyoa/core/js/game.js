@@ -63,12 +63,12 @@ $(document).ready(function(){
         
         bar_div.append($('<p class="stat-label">'+stat['value']+'%</p>'));
  
-        stat_row.append($('<div class="span2 tooltip-container"><p>').append($('<a id="'+stat['name']+'-tooltip" title="" data-title="'+stat['desc']+'" data-placement="left">'+stat['name']+'</a></p></div>').tooltip()));
+        stat_row.append($('<div class="span2 tooltip-container"><p>').append($('<span class="tooltip-label" id="'+stat['name']+'-tooltip" title="" data-title="'+stat['desc']+'" data-placement="left">'+stat['name']+' <i class="icon-question-sign"></i></span></div>').tooltip()));
         
         stat_row.append(bar_div);
         
         if(stat['opposed-name']){
-            stat_row.append($('<div class="span2 opposed-tooltip-container"><p>').append($('<a id="'+stat['opposed-name']+'-tooltip" title="" data-title="'+stat['opposed-desc']+'" data-placement="right">'+stat['opposed-name']+'</a></p></div>').tooltip()));
+            stat_row.append($('<div class="span2 opposed-tooltip-container"><p>').append($('<span class="tooltip-label" id="'+stat['opposed-name']+'-tooltip" title="" data-title="'+stat['opposed-desc']+'" data-placement="right">'+stat['opposed-name']+' <i class="icon-question-sign"></i></span></div>').tooltip()));
         }
         
         return stat_row;

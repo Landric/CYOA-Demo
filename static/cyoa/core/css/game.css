@@ -24,6 +24,10 @@
     text-align:right;
 }
 
+.tooltip-label{
+    border-bottom:1px dotted #999;
+}
+
 .bar-div{
     position: relative;
 }
