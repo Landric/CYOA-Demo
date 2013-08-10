@@ -71,6 +71,7 @@ div[class="tooltip-inner"] {
 }
 
 .choice{
+    cursor:pointer;
     border:2px solid #A1A1A1;
     padding:10px 40px 0px;
     background:#F0F0F0;
