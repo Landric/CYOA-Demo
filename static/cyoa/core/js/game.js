@@ -151,6 +151,7 @@ $(document).ready(function(){
         }
 
         container.fadeIn(500);
+        $('html, body').animate({ scrollTop: 0 }, 'fast');
     }
     
     function initialiseGame()
