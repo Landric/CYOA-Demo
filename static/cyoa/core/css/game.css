@@ -25,6 +25,7 @@
 }
 
 .tooltip-label{
+    cursor:help;
     border-bottom:1px dotted #999;
 }
 
